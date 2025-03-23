@@ -1,0 +1,85 @@
+@use '../_colors';
+@use '../_globals';
+
+.masthead {
+    align-items: center;
+    border-bottom: 2px solid colors.$neutral-extralight-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+    // Desktop
+    @media screen and (min-width: 769px) {
+        padding: 1rem 3rem;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    &-logo {
+        mix-blend-mode: darken;
+    }
+
+    &-bg {
+        /* This is not exactly the same gradient as the one in the design, I did this workaround because I do not have access to the image used on the background */
+        background-image: linear-gradient(to left bottom, #efbdd1, #efcadf, #efd7eb, #f1e4f4, #f5f0fa, #f4f2fb, #f3f3fc, #f2f5fd, #e4effc, #d2ebf8, #c0e6f1, #afe2e5);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    h1 {
+        font-size: 1rem;
+        line-height: 100%;
+    }
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 33%;
+
+    &:hover, &:focus-visible {
+        .search-input {
+            border: 1px solid colors.$accent-medium-color;
+            outline: none;
+        }
+    }
+
+    .search-input {
+        display: none;
+
+        @media screen and (min-width: 769px) {
+            display: block;
+            border: 1px solid colors.$neutral-light-color;
+            border-radius: 30px;
+            height: 36px;
+            padding: 8px 8px 8px 16px;
+            width: 100%;     
+        }
+    }
+
+    .search-button {
+        background-color: colors.$neutral-darkest-color;
+        border: none;
+        border-radius: 100%;
+        cursor: pointer;
+        height: 40px;
+        position: absolute;
+        right: 0;
+        width: 40px;
+
+        @media screen and (min-width: 769px) {
+            right: 8px;
+        }
+
+        svg {
+            color: colors.$neutral-lightest-color;
+        }
+    }
+}

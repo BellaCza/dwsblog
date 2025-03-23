@@ -1,7 +1,6 @@
 @use '_colors';
 
-/* Font Families */
-$font-brand: Halcom-Regular, Arial, sans-serif, Arial, sans-serif;
+/* Font Family */
 $font-stack: "Open Sans", sans-serif;
 
 /* Font Weight */
@@ -45,6 +44,8 @@ body {
         line-height: 130%;
     }
 }
+
+/* Caption */
 
 .caption {
     font-size: 0.75rem;

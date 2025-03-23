@@ -1,0 +1,62 @@
+@use '../_colors';
+
+.blog-detail {
+    display: flex;
+    flex-direction: column;
+    margin: 0 2rem 2rem 2rem;
+    position: relative;
+
+    // Desktop
+    @media screen and (min-width: 1025px) {
+        margin: 0 3rem 3rem 3rem;
+    }
+
+    .back-btn {        
+
+        // Desktop
+        @media screen and (min-width: 1025px) {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    .post-content {
+        width: 100%;
+        margin: 0 auto;
+
+        // Desktop
+        @media screen and (min-width: 1025px) {
+            width: calc((100% / 6) * 4);
+        }
+    }
+
+    .post-info {
+        display: flex;
+
+        p {
+            margin: 0.5rem 0;
+        }
+
+        .author-avatar {
+            width: 64px;
+            height: 100%;
+            padding-right: 1rem;
+        }
+
+        .date {
+            color: colors.$neutral-dark-color;
+        }
+    }
+
+    .post-image {
+        border-radius: 24px;
+        margin: 1rem 0;
+        width: 100%;
+    }
+
+    .latest-articles {
+        border-top: 1px solid colors.$neutral-extralight-color;
+        margin: 3rem 0;
+    }
+}

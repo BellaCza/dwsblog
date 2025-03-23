@@ -1,0 +1,13 @@
+.latest-articles-line {
+    margin: 0 -1rem;
+
+    // Desktop
+    @media screen and (min-width: 1025px) {
+        display: flex;
+        justify-content: space-between;    
+    }
+
+    .card {
+        width: calc(100% - 2rem);
+    }
+}

@@ -1,0 +1,11 @@
+.filter {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+    // Desktop
+    @media screen and (min-width: 769px) {
+        padding: 1rem 3rem;
+    }
+}
