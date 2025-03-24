@@ -1,11 +1,86 @@
-.filter {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 2rem;
+@use '../_colors';
+@use '../_globals';
 
-    // Desktop
-    @media screen and (min-width: 769px) {
-        padding: 1rem 3rem;
+.filter {
+    &-desktop {
+        align-items: center;
+        background-color: colors.$neutral-lightest-color;
+        border: 1px solid colors.$neutral-extralight-color;
+        border-radius: 1rem;
+        margin: 0 1rem;
+        padding: 0 1.25rem 1rem 1.25rem;
+
+        h3 {
+            align-items: center;
+            color: colors.$neutral-darkest-color;
+            display: flex;
+
+            svg {
+                fill: colors.$neutral-darkest-color;
+                padding-right: 0.5rem;
+            }
+        }
+
+        nav {
+            h4 {
+                margin-bottom: 0;
+            }
+
+            .filter-list {
+                margin: 0;
+                overflow: hidden;
+                padding: 0 0 1rem 0;
+
+                li {
+                    border-bottom: 1px solid colors.$neutral-extralight-color;
+                    color: colors.$neutral-extradark-color;
+                    list-style: none;
+                    margin: 0.75rem 0;
+                    position: relative;
+
+                    &:hover {
+                        color: colors.$accent-dark-color;
+                    }         
+
+                    input {
+                        left: -1rem;
+                        position: absolute;
+                        width: 1px;
+                    }   
+                    
+                    label {
+                        cursor: pointer;
+                        display: inline-block;
+                        padding: 0.5rem;
+                        width: calc(100% - 1.1rem);
+
+                        &.active {
+                            background-color: rgba(0, 191, 193, 0.05); 
+                            border: 1px solid colors.$accent-dark-color;
+                            border-radius: 12px;
+                            color: colors.$accent-dark-color; 
+                        }
+                    }
+                }
+            }
+        }
+
+        .button {
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        // Tablet & Mobile
+        @media screen and (max-width: 1024px) {
+            display: none;
+        }
+    }
+
+    &-mobile {
+        // Desktop
+        @media screen and (min-width: 1025px) {
+            display: none;
+        }
+
     }
 }

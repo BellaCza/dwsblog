@@ -20,20 +20,22 @@ const Card: React.FC<CardProps> = ({ post }) => {
   const formattedDate = useFormattedDate(post?.createdAt || '');
 
   return (
-    <Link to={`/post/${post.id}`} className="card">
-      <img src={post.thumbnail_url} alt={post.title} className="card-image" />
-      <div className="card-content">
-        <div className="card-header">
-          <p className="card-date caption">{formattedDate}</p> 
-          <p className="card-author caption">{post.author.name.split(' ').pop()}</p>
+    <article className="card">
+      <Link to={`/post/${post.id}`} className="card-link">
+        <img src={post.thumbnail_url} alt={post.title} className="card-image" />
+        <div className="card-content">
+          <div className="card-header">
+            <p className="card-date caption">{formattedDate}</p> 
+            <p className="card-author caption">{post.author.name.split(' ').pop()}</p>
+          </div>
+          <h3 className="card-title">{post.title}</h3>
+          <p className="card-summary">{post.content}</p>
+          {post.categories.map(category => (
+            <p key={category.name} className="card-categories caption">{category.name}</p>
+          ))}
         </div>
-        <h3 className="card-title">{post.title}</h3>
-        <p className="card-summary">{post.content}</p>
-        {post.categories.map(category => (
-          <p key={category.name} className="card-categories caption">{category.name}</p>
-        ))}
-      </div>
-    </Link>
+      </Link>
+    </article>
   );
 };
 

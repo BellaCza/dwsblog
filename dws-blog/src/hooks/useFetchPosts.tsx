@@ -5,13 +5,13 @@ import { Post } from '../types/Post';
  * A hook that fetches all blog posts from the backend API.
  *
  * Returns an object with the following properties:
- * - posts: An array of Post objects, representing the blog posts.
- * - loading: A boolean indicating whether the data is still loading.
- * - error: A string or null, indicating whether there was an error during fetching.
+ * - posts: The blog posts.
+ * - loading: Whether the data is still loading.
+ * - error: Whether there was an error during fetching.
  *
- * @returns {Object} An object with the posts, loading and error properties.
+ * @returns The fetched blog posts.
  */
-const useFetchPosts = () => {
+const useFetchPosts = (order: 'newest' | 'oldest') => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -24,7 +24,13 @@ const useFetchPosts = () => {
           throw new Error('Failed to fetch posts');
         }
         const data: Post[] = await response.json();
-        setPosts(data);
+
+        // Sort the posts based on the order parameter
+        const sortedPosts = order === 'newest'
+        ? data.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+        : data.sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
+
+        setPosts(sortedPosts);
       } catch (error: Error) {
         setError(error.message);
       } finally {
@@ -33,7 +39,7 @@ const useFetchPosts = () => {
     };
 
     fetchPosts();
-  }, []);
+  }, [order]);
 
   return { posts, loading, error };
 };

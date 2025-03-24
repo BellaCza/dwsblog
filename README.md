@@ -9,7 +9,7 @@
 - Blog list view.
 - Blog detail view.
 - Responsive design.
-- State management using Context API.
+- State management on fetch API using Context API.
 
 ## Tech Stack
 - Vite

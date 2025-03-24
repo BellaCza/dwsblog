@@ -1,0 +1,92 @@
+@use '../_colors';
+@use '../_globals';
+
+.sort {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    position: relative;
+    width: 220px;
+
+    p {
+        display: none;
+
+        // Desktop
+        @media screen and (min-width: 1025px) {
+            color: colors.$neutral-extradark-color;
+            font-weight: 700;
+            display: block;
+            padding-right: 0.5rem;
+        }
+    }
+
+    &-by {
+        background-color: transparent;
+        border-radius: 2rem;
+        display: flex;
+        flex-direction: column;
+        font-family: globals.$font-stack;
+        font-size: 1rem;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: -5px;
+        transition: globals.$ease-transition;
+        width: 150px;
+
+        // Desktop
+        @media screen and (min-width: 1025px) {
+            top: 1rem;
+        }
+
+        li {
+            background-color: transparent;
+            border: none;
+            border-radius: 2rem;
+            color: colors.$neutral-extradark-color;
+            display: none;
+            order: 2;
+            padding: 0.6rem 2.5rem 0.6rem 1rem;
+
+            &:hover {
+                background-color: colors.$accent-medium-color;
+                border-radius: 2rem;
+                color: colors.$neutral-extralight-color;
+                cursor: pointer;  
+                transition: globals.$ease-transition;   
+            }           
+
+            &.active {
+                display: flex;
+                order: 1;
+            }
+        }        
+
+        &:hover {
+            li {
+                display: block;
+            }
+
+            .sort-by {
+                transition: globals.$ease-transition;
+            }    
+        }
+    }       
+
+    &-icon {
+        background-color: transparent;
+        cursor: pointer;  
+        position: absolute;
+        right: 12px;
+        stroke: colors.$accent-medium-color;
+        transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transition: globals.$ease-transition;
+
+        
+        &.hover {
+            stroke: colors.$neutral-extralight-color;
+        } 
+    }  
+}

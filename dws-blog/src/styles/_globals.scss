@@ -46,9 +46,11 @@ body {
 }
 
 /* Caption */
-
 .caption {
     font-size: 0.75rem;
     line-height: 130%;
     font-weight: $font-regular;
 }
+
+/* Transition */
+$ease-transition: all 0.2s ease-in-out;

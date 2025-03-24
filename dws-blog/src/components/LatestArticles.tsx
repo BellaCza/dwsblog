@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card'; 
-import '../styles/components/LatestArticles.scss';
 import useFetchPosts from '../hooks/useFetchPosts';
+import '../styles/components/LatestArticles.scss';
 
 /**
  * A component that displays the latest articles.
