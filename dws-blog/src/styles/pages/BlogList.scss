@@ -1,0 +1,48 @@
+.blog-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+
+  .blog-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .nav-left {
+    display: none;
+  }
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+
+  .filter {
+    @media screen and (min-width: 1025px) {
+      display: none;
+    }
+  }
+
+  .title {
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
+  }
+}
+
+// Tablet & Desktop
+@media screen and (min-width: 1025px) {
+  .blog-content {
+    .nav-left {
+      display: block;
+      width: 25%;
+    }
+
+    .blog-list {
+      margin: -1rem -1rem 0 0;
+      width: 75%;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@use "_colors";
+
+/* Font Family */
+$font-stack: "Open Sans", sans-serif;
+
+/* Font Weight */
+$font-regular: 400;
+$font-bold: 700;
+
+/* Headers */
+h1 {
+  font-size: 3.5rem;
+  font-weight: $font-bold;
+  line-height: 130%;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: $font-bold;
+  line-height: 130%;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: $font-bold;
+  line-height: 130%;
+}
+
+// For very small screens
+@media screen and (max-width: 560px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Body */
+body {
+  color: colors.$neutral-darkest-color;
+  font-family: $font-stack;
+  font-weight: $font-regular;
+  line-height: 150%;
+  margin: 0;
+  padding: 0;
+
+  .large {
+    font-size: 1rem;
+  }
+
+  .small {
+    font-size: 0.75rem;
+    line-height: 130%;
+  }
+}
+
+/* Caption */
+.caption {
+  font-size: 0.75rem;
+  line-height: 130%;
+  font-weight: $font-regular;
+}
+
+/* Transition */
+$ease-transition: all 0.2s ease-in-out;

@@ -1,0 +1,90 @@
+@use "../_colors";
+@use "../_globals";
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  &-button {
+    background-color: transparent;
+    border: 1px solid colors.$secondary-medium-color;
+    border-radius: 32px;
+    color: colors.$secondary-medium-color;
+    cursor: pointer;
+    display: flex;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: globals.$font-stack;
+    line-height: 100%;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    width: fit-content;
+    transition: globals.$ease-transition;
+
+    &:hover {
+      background-color: rgba(211, 20, 80, 0.05);
+      transition: globals.$ease-transition;
+
+      .dropdown-list {
+        display: block;
+      }
+    }
+
+    .icon {
+      fill: none;
+      stroke: colors.$secondary-medium-color;
+      transition: globals.$ease-transition;
+
+      &-down {
+        padding-left: 0.5rem;
+        transition: globals.$ease-transition;
+      }
+
+      &-up {
+        transform: rotate(180deg);
+        padding-right: 0.5rem;
+        transition: globals.$ease-transition;
+      }
+    }
+  }
+
+  &-list {
+    background-color: colors.$neutral-lightest-color;
+    border-radius: 1rem;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem;
+    position: absolute;
+    top: 100%;
+    width: 250%;
+    z-index: 1;
+
+    &.hidden {
+      display: none;
+    }
+
+    li {
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-family: globals.$font-stack;
+      line-height: 100%;
+
+      a {
+        color: colors.$neutral-darkest-color;
+        display: inline-block;
+        padding: 0.8rem 1rem;
+        text-decoration: none;
+        transition: globals.$ease-transition;
+        width: calc(100% - 2rem);
+
+        &:hover,
+        &:focus {
+          color: colors.$accent-medium-color;
+          transition: globals.$ease-transition;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use "../_colors";
+@use "../_globals";
+
+footer {
+  padding: 1rem 1rem 2rem 1rem;
+  text-align: center;
+
+  a {
+    color: colors.$accent-medium-color;
+    font-weight: 600;
+    text-decoration: none;
+    transition: globals.$ease-transition;
+
+    &:hover {
+      color: colors.$accent-dark-color;
+      transition: globals.$ease-transition;
+    }
+  }
+}
