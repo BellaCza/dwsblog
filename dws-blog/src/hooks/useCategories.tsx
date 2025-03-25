@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Category } from '../types/Category';
+import { useState, useEffect } from "react";
+import { Category } from "../types/Category";
 
 /**
  * A hook that fetches all categories from the backend API.
@@ -19,10 +19,12 @@ const useCategories = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch('https://tech-test-backend.dwsbrazil.io/categories/');
-        const data : Category[] = await response.json();
+        const response = await fetch(
+          "https://tech-test-backend.dwsbrazil.io/categories/"
+        );
+        const data: Category[] = await response.json();
         setCategories(data);
-      } catch (error : Error) {
+      } catch (error: Error) {
         setError(error);
       } finally {
         setLoading(false);

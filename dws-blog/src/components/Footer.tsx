@@ -10,13 +10,19 @@ import "../styles/components/Footer.scss";
  * @returns A JSX element representing the footer.
  */
 const Footer: React.FC = () => {
-    return (
-        <footer>
-            <p>&copy; 2025 DWS Blog. All rights reserved.</p>
-            <p>Made by <Link to="https://isabellaczamanski.lovestoblog.com">Isabella Czamanski</Link>.</p>
-            { /* Added a simple footer just to let my name on it :) */ }
-        </footer>
-    );
-}
+  return (
+    <footer>
+      <p>&copy; 2025 DWS Blog. All rights reserved.</p>
+      <p>
+        Made by{" "}
+        <Link to="https://isabellaczamanski.lovestoblog.com">
+          Isabella Czamanski
+        </Link>
+        .
+      </p>
+      {/* Added a simple footer just to let my name on it :) */}
+    </footer>
+  );
+};
 
 export default Footer;

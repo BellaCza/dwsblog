@@ -3,6 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BlogList from "./pages/BlogList";
 import BlogDetail from "./pages/BlogDetail";
 
+/**
+ * The main app component, which renders the entire application.
+ *
+ * This component is the root of the app, and is responsible for
+ * rendering the routes.
+ *
+ * @returns {React.ReactElement} The rendered component
+ */
 const App: React.FC = () => {
   return (
     <Router>

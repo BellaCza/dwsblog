@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Author } from '../types/Author';
+import { useState, useEffect } from "react";
+import { Author } from "../types/Author";
 
 /**
  * A hook that fetches all authors from the backend API.
@@ -19,8 +19,10 @@ const useAuthors = () => {
   useEffect(() => {
     const fetchAuthors = async () => {
       try {
-        const response = await fetch('https://tech-test-backend.dwsbrazil.io/authors/');
-        const data : Author[] = await response.json();
+        const response = await fetch(
+          "https://tech-test-backend.dwsbrazil.io/authors/"
+        );
+        const data: Author[] = await response.json();
         setAuthors(data);
       } catch (error: Error) {
         setError(error);

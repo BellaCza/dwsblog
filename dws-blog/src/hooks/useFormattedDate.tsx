@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 /**
  * A hook that takes a date string and returns a formatted date string
@@ -8,14 +8,14 @@ import { useState, useEffect } from 'react';
  * @returns {string} A string representing the formatted date.
  */
 const useFormattedDate = (dateString: string) => {
-  const [formattedDate, setFormattedDate] = useState('');
+  const [formattedDate, setFormattedDate] = useState("");
 
   useEffect(() => {
     const date = new Date(dateString);
-    const formattedDate = date.toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric',
+    const formattedDate = date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
     });
     setFormattedDate(formattedDate);
   }, [dateString]);

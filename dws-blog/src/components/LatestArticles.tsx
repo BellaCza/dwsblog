@@ -1,7 +1,7 @@
-import React from 'react';
-import Card from './Card'; 
-import useFetchPosts from '../hooks/useFetchPosts';
-import '../styles/components/LatestArticles.scss';
+import React from "react";
+import Card from "./Card";
+import useFetchPosts from "../hooks/useFetchPosts";
+import "../styles/components/LatestArticles.scss";
 
 /**
  * A component that displays the latest articles.
@@ -28,11 +28,11 @@ const LatestArticles: React.FC = () => {
       <h2 className="latest-articles-title">Latest Articles</h2>
       <div className="latest-articles-line">
         {posts.slice(0, 3).map((post) => (
-            <Card key={post.id} post={post} />
+          <Card key={post.id} post={post} />
         ))}
       </div>
     </>
   );
 };
 
-export default LatestArticles;  
+export default LatestArticles;

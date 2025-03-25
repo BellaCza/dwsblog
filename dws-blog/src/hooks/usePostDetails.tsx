@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Post } from '../types/Post';
+import { useState, useEffect } from "react";
+import { Post } from "../types/Post";
 
 /**
  * A hook that fetches the post details from the API.
@@ -18,9 +18,11 @@ const usePostDetails = (postId: number) => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await fetch(`https://tech-test-backend.dwsbrazil.io/posts/${postId}`);
+        const response = await fetch(
+          `https://tech-test-backend.dwsbrazil.io/posts/${postId}`
+        );
         if (!response.ok) {
-          throw new Error('Failed to fetch post');
+          throw new Error("Failed to fetch post");
         }
         const data: Post = await response.json();
         setPost(data);

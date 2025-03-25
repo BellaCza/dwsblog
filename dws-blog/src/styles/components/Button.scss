@@ -1,57 +1,57 @@
-@use '../_colors';
-@use '../_globals';
+@use "../_colors";
+@use "../_globals";
 
 .button {
-    border-radius: 32px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    font-family: globals.$font-stack;
-    line-height: 100%;
-    padding: 0.8rem 1rem;
-    text-align: center;
-    width: fit-content;
+  border-radius: 32px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: globals.$font-stack;
+  line-height: 100%;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  width: fit-content;
 
-    i {
-        display: none;
+  .icon {
+    display: none;
+  }
+
+  &-primary {
+    background-color: colors.$secondary-medium-color;
+    border: none;
+    color: colors.$neutral-lightest-color;
+    transition: globals.$ease-transition;
+
+    &:hover {
+      background-color: colors.$secondary-dark-color;
+      transition: globals.$ease-transition;
+    }
+  }
+
+  &-secondary {
+    background-color: transparent;
+    border: 1px solid colors.$secondary-medium-color;
+    color: colors.$secondary-medium-color;
+    transition: globals.$ease-transition;
+
+    .icon {
+      display: inline-flex;
+      fill: none;
+      padding: 0 0.5rem 0 0;
+      stroke: colors.$secondary-medium-color;
+      vertical-align: middle;
+      transition: globals.$ease-transition;
     }
 
-    &-primary {
-        background-color: colors.$secondary-medium-color;
-        border: none;
-        color: colors.$neutral-lightest-color;
-        transition: globals.$ease-transition;
+    &:hover {
+      background-color: transparent;
+      border: 1px solid colors.$secondary-dark-color;
+      color: colors.$secondary-dark-color;
+      transition: globals.$ease-transition;
 
-        &:hover {
-            background-color: colors.$secondary-dark-color;
-            transition: globals.$ease-transition;
-        }
+      .icon {
+        stroke: colors.$secondary-dark-color;
+      }
     }
-
-    &-secondary {
-        background-color: transparent;
-        border: 1px solid colors.$secondary-medium-color; 
-        color: colors.$secondary-medium-color;
-        transition: globals.$ease-transition;  
-
-        i {
-            display: inline-flex;
-            fill: none;
-            padding: 0 0.5rem 0 0;
-            stroke: colors.$secondary-medium-color;
-            vertical-align: middle;
-            transition: globals.$ease-transition; 
-        }
-
-        &:hover {
-            background-color: transparent;
-            border: 1px solid colors.$secondary-dark-color; 
-            color: colors.$secondary-dark-color;
-            transition: globals.$ease-transition;
-
-            i {
-                stroke: colors.$secondary-dark-color;
-            }
-        }
-    }
+  }
 }
